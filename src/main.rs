@@ -1,5 +1,5 @@
 use std::io::{Read, Write};
-use std::net::{TcpListener, TcpStream};
+use std::net::{TcpListener};
 
 fn TcpServer() {
     // Handle the client connection
@@ -9,10 +9,19 @@ fn TcpServer() {
     for stream in listner.incoming() {
         match stream {
             Ok(mut stream) => {
+                println!("Connection Established");
+                // handle client connection seperate thread
 
+                std::thread::spawn(move || {
+                    let mut buffer = [0; 1024];
+                    
+                    stream.read(&mut buffer).unwrap(); // read data from client
+
+                    stream.write_all(b"Hello from server!").unwrap(); // send res to client
+                });
             }
             Err(e) => {
-                eprintln!("Error Acepting Connection : {}", e)
+                eprintln!("Error Acepting Connection : {}", e)      // error print
             }
         }
     }
