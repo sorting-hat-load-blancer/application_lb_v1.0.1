@@ -14,7 +14,7 @@ fn TcpServer() {
 
                 std::thread::spawn(move || {
                     let mut buffer = [0; 1024];
-                    
+
                     stream.read(&mut buffer).unwrap(); // read data from client
 
                     stream.write_all(b"Hello from server!").unwrap(); // send res to client
@@ -27,5 +27,5 @@ fn TcpServer() {
     }
 }
 fn main() {
-    println!("Hello, world!");
+    TcpServer();
 }
