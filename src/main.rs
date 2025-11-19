@@ -1,7 +1,7 @@
 use std::io::{Read, Write};
 use std::net::{TcpListener};
 
-fn TcpServer() {
+fn tcp_server() {
     // Handle the client connection
     let listner = TcpListener::bind("127.0.0.1:9000").unwrap();
     println!("Application LoadBlancer Running on 127.0.0.1:9000");
@@ -27,5 +27,5 @@ fn TcpServer() {
     }
 }
 fn main() {
-    TcpServer();
+    tcp_server();
 }
