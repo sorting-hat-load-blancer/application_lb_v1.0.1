@@ -11,6 +11,11 @@ struct HealthCheck {
     health_check_time: u32  // miliseconds
 }
 
+// rate limitation
+struct RateLimiting {
+    alogrithm: String,  // tokenbucket , fixwindow , slidingwindow
+}
+
 // configuration struct
 struct Configuration {
     protocol: String,
