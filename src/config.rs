@@ -1,5 +1,8 @@
 
-
+// define health check
+struct HealthCheck {
+    
+}
 
 // configuration struct
 struct Configuration {
