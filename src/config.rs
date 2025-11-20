@@ -1,0 +1,6 @@
+
+
+// configuration struct
+struct Configuration {
+
+}
