@@ -17,8 +17,11 @@ struct RateLimiting {
 }
 
 // logical routing (API gateways)
-struct LogicalRouting {
+struct VirtualRouting {
+
     // define servers and path
+    path: String,
+    servers: Vec<Server>
 }
 
 // configuration struct
@@ -29,6 +32,7 @@ struct Configuration {
     health_check: HealthCheck,
     http_headers: bool,     // bool value -> http headers forward to upstream server (true -> forward header, false -> without forward)
     ssl_support: bool,
-    rate_limiting: RateLimiting
-    
+    rate_limiting: RateLimiting,
+    virtual_paths: Vec<VirtualRouting>
 }
+
