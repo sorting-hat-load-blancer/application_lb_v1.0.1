@@ -1,23 +1,23 @@
 
 // define server
-struct Server {
+pub struct Server {
     server_ip: String,
     server_port: u16
 }
 
 // define health check
-struct HealthCheck {
+pub struct HealthCheck {
     health_check_servers: Vec<Server>,
     health_check_time: u32  // miliseconds
 }
 
 // rate limitation
-struct RateLimiting {
+pub struct RateLimiting {
     alogrithm: String,  // tokenbucket , fixwindow , slidingwindow
 }
 
 // logical routing (API gateways)
-struct VirtualRouting {
+pub struct VirtualRouting {
 
     // define servers and path
     path: String,
@@ -25,7 +25,7 @@ struct VirtualRouting {
 }
 
 // configuration struct
-struct Configuration {
+pub struct Configuration {
     protocol: String,
     server_run_port: u16,
     upstream_servers: Vec<String>,
