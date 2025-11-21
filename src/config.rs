@@ -36,3 +36,8 @@ pub struct Configuration {
     virtual_paths: Vec<VirtualRouting>
 }
 
+impl Server {
+    pub fn socket_address(&self) -> String {
+        format!("{}:{}", self.server_ip, self.server_port)
+    }
+}
