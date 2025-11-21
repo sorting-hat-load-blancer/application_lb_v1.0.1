@@ -1,4 +1,5 @@
 mod config;
+mod client;
 
 use std::io::{Read, Write};
 use std::net::{TcpListener};
